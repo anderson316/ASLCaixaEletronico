@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Erro no Saque";
+}
+
+<style>
+    .error-container {
+        margin-top: 100px;
+        text-align: center;
+        color: #333;
+    }
+
+    .error-icon {
+        font-size: 80px;
+        color: #dc3545;
+        animation: pulse 1.5s infinite;
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+
+        50% {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+    }
+
+    .btn-voltar {
+        margin-top: 30px;
+        padding: 10px 25px;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="container error-container">
+    <div class="error-icon">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+    </div>
+    <h1 class="mt-4 text-danger">Ops! Algo deu errado 😕</h1>
+    <p class="lead mt-3">
+        Ocorreu um erro inesperado ao processar sua solicitação.<br />
+        Tente novamente em alguns instantes.
+    </p>
+
+    @if (ViewData["RequestId"] != null)
+    {
+        <p class="text-muted small mt-3">
+            <strong>ID do erro:</strong> <code>@ViewData["RequestId"]</code>
+        </p>
+    }
+
+    <a href="/Saque" class="btn btn-primary btn-voltar">
+        <i class="bi bi-arrow-left-circle"></i> Voltar ao início
+    </a>
+</div>
