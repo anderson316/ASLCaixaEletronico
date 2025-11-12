@@ -6,8 +6,6 @@ namespace ASLCaixaEletronico.Models
 
         public List<Dictionary<decimal, int>>? CombinacoesDetalhadas { get; set; }
 
-        //public List<string>? Opcoes { get; set; }
-
         public string? MensagemErro { get; set; }
     }
 }

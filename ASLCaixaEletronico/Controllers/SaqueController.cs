@@ -19,8 +19,6 @@ namespace ASLCaixaEletronico.Controllers
             try
             {
                 model.CombinacoesDetalhadas = _saqueService.CombinacoesNotas(model.Valor);
-                //var combinacoes = _saqueService.CombinacoesNotas(model.Valor);
-                //model.Opcoes = combinacoes.Select(c => string.Join(", ", c.Select(kv => $"{kv.Value} x R$ {kv.Key}"))).ToList();
             }
             catch (ArgumentException ex)
             {
