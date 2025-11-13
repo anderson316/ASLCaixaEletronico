@@ -21,10 +21,18 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Saque" asp-action="">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Saque" asp-action="">Saque</a>
                         </li>
                     </ul>
                 </div>
+
+                @if (Context.Session.GetString("usuarioLogado") != null)
+                {
+                    <div class="text-end p-2">
+                        <a class="btn btn-outline-danger btn-sm" href="/Auth/Logout">Sair</a>
+                    </div>
+                }
+
             </div>
         </nav>
     </header>

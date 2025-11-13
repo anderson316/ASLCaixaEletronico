@@ -11,6 +11,8 @@ namespace ASLCaixaEletronico.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("usuarioLogado")))
+                return RedirectToAction("Login", "Auth");
             return View(new SaqueViewModel());
         }
         [HttpPost]
